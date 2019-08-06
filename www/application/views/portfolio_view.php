@@ -13,3 +13,10 @@ $count = 0;
 ?>
 </table>
 </p>
+
+<?php foreach (Model_Portfolio::GetInfo() AS $index): ?>
+    id: <?=$index['id']?>
+    last_name: <?=$index['last_name']?>
+		first_name: <?=$index['first_name']?>
+		description: <?=$index['description']?>
+<?php endforeach; ?>
