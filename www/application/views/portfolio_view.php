@@ -10,7 +10,6 @@ $count = 0;
 		$count++;
 		echo '<tr><td>'.$count.'</td><td>'.$row['firstname'].'</td><td>'.$row['lastname'].'</td><td>'.$row['date'].'</td></tr>';
 	}
-	
 ?>
 </table>
 </p>

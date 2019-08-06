@@ -1,5 +1,8 @@
 <?php
 
+//namespace application\controllers;
+use application\lib\Db;
+
 class Controller_Portfolio extends Controller
 {
 
@@ -8,10 +11,11 @@ class Controller_Portfolio extends Controller
 		$this->model = new Model_Portfolio();
 		$this->view = new View();
 	}
-	
+
 	function action_index()
 	{
-		$data = $this->model->get_data();		
+		//$db = new Db;
+		$data = $this->model->get_data();
 		$this->view->generate('portfolio_view.php', 'template_view.php', $data);
 	}
 }

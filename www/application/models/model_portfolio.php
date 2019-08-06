@@ -2,12 +2,11 @@
 
 class Model_Portfolio extends Model
 {
-	
+
 	public function get_data()
-	{	
-		
+	{
 		// Здесь мы просто сэмулируем реальные данные -> дальше будет из бд
-		
+
 		return array(
 			array(
 				'firstname' => 'Максим',
@@ -19,7 +18,6 @@ class Model_Portfolio extends Model
 				'lastname' => 'Лашковский',
 				'date' => '16.12.1999'
 			),
-
 		);
 	}
 
