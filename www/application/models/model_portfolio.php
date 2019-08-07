@@ -23,6 +23,7 @@ class Model_Portfolio extends Model
 		);
 	}
 
+
 	public static function GetInfo(){
 		$db = Db::getConnection();
 		$sql = 'SELECT * FROM `userinfo`';

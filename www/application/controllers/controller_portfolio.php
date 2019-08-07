@@ -1,7 +1,7 @@
 <?php
 
 //namespace application\controllers;
-use application\lib\Db;
+//use application\lib\Db;
 
 class Controller_Portfolio extends Controller
 {

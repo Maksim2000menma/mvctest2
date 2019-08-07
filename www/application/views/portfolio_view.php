@@ -14,9 +14,24 @@ $count = 0;
 </table>
 </p>
 
-<?php foreach (Model_Portfolio::GetInfo() AS $index): ?>
+ <!-- <?php //foreach (Model_Portfolio::GetInfo() AS $index): ?>
     id: <?=$index['id']?>
     last_name: <?=$index['last_name']?>
 		first_name: <?=$index['first_name']?>
 		description: <?=$index['description']?>
-<?php endforeach; ?>
+<?php //endforeach; ?>  -->
+
+
+<?php
+	$connection = mysqli_connect("localhost", "root", "");
+	$select_db = mysqli_select_db($connection,'appusers');
+	mysqli_query($connection, "SET CHARACTER SET 'utf8'");
+
+	$result=mysqli_query($connection, "SELECT first_name FROM userinfo;");
+	while($row=mysqli_fetch_array($result))
+	{
+		if($row['first_name'] !== NULL && $row['first_name']!==''){
+			echo "<p>".$row['first_name']."</p>";
+		}
+	}
+	?>
