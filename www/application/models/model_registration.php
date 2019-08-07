@@ -2,8 +2,7 @@
 
 class Model_Registration extends Model
 {
-// /$last_name
-	public static function CreateUser(){
+	public static function CreateUser($last_name){
 		// $connection = mysqli_connect("localhost", "root", "");
 		// $select_db = mysqli_select_db($connection,'appusers');
 		// mysqli_query($connection, "SET CHARACTER SET 'utf8'");
@@ -15,18 +14,20 @@ class Model_Registration extends Model
 
     $connection = mysqli_connect("localhost", "root", "");
     $select_db = mysqli_select_db($connection,'appusers');
+    mysqli_query($connection, "SET CHARACTER SET 'utf8'");
 
-    if (isset($_POST['submitadd'])){
-    			$last_name = $_POST['last_name'];
+    			//$last_name = $_POST['last_name'];
+
     			$query = "INSERT INTO userinfo (last_name) VALUES ('$last_name')";
     			$result = mysqli_query($connection, $query);
+
     			if($result){
     				$smsg="Добавление прошло успешно";
     			echo $smsg;
+          //header('/portfolio');
     		}
     		else {
     			$fsmsg="Ошибка";
-    		}
     		}
 
 	}
