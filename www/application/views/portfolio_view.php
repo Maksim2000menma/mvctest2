@@ -1,13 +1,11 @@
 <h1>Страница 2</h1>
-<p>Спикок пользователей</p>
-
+<p class="normal_size">Спикок всех хользователей пользователей</p>
+<br>
 
 <?php
  	foreach($data as $row)
  	{
-		// $str = '<p>-'.$row['id'].'-'.$row['first_name'].'-'.$row['last_name'].'-'.$row['date'].'-'.$row['login'].'-'.$row['password'].
-		// '-'.$row['description'].'-'.$row['address'].'-'.$row['role_id'].'</p>';
-		// echo $str;?>
+		?>
 		<div class="fon_user">
 			<div class="line_info_user">
 					<div class="small siz" style="line-height:1;">

@@ -1,14 +1,15 @@
 <?php
 
-
-//use application\lib\Db;
-//namespace application\controller;
 class Controller_Registration extends Controller
 {
-	
+
 	function action_index()
 	{
-		//$db = new Db;
+		// if(isset($_POST['submitadd'])) {
+		// 			 $last_name = $_POST['last_name'];
+		// 			 Model_Registration::InsertInfo($last_name);
+		// 	 }
+
 		$this->view->generate('registration_view.php', 'template_view.php');
 	}
 }
