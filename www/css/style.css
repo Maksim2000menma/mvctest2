@@ -15,7 +15,7 @@ a:hover {
 body {
 	line-height: 1.75em;
 	/*background: #fff url('../images/00bd.png');*/
-	
+
 	font-size: 11.5pt;
 	color: #353535;
 }
@@ -105,7 +105,7 @@ a {
 	left: 20px;
 	height: 130px;
 	line-height: 130px;
-	
+
 }
 
 #logo a {
@@ -272,4 +272,26 @@ a {
 .box table, th, td {
 	border: 1px solid #e3e3e3;
 	padding: 5px;
+}
+
+.fon_user{
+	margin:5px;
+	display: inline-block;
+	width: 200px;
+	background: pink;
+	border-radius: 15%;
+	border: 1px solid black;
+	padding: 10px;
+}
+.line_info_user{
+	text-align: center;
+}
+.small_size{
+	font-size: 12pt;
+}
+.normal_size{
+	font-size: 15pt;
+}
+.big_size{
+	font-size: 18pt;
 }
