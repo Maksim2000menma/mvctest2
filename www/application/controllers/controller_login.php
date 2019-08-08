@@ -20,16 +20,22 @@ class Controller_Login extends Controller
 			$info = $this->model->GetLogin($login, $password);
 
 			//	if(($login==$info['login']) && ($password==$info['password'])){
-			if($info){
+			$row = mysqli_fetch_array($info, MYSQLI_ASSOC);
+			if(($login == $row["login"]) && ($password == $row["password"])){
+			//if($info){
 			//var_dump($info);
-			//var_dump($login, $password);
+
+			$row = mysqli_fetch_array($info, MYSQLI_ASSOC);//рабиваем полученный массив из sql запроса
+	//printf ("%s (%s)\n", $row["login"], $row["password"]);
+
+	//printf($row["login"], $row["password"]);
 
 			$data["login_status"] = "access_granted";
 
 			echo $_SESSION['admin'];
 			$_SESSION['admin'] = $password;
 			$_SESSION['login'] = $login;
-			header('admin/');//header('Location:/admin/');
+			header('Location:/admin/');//header('Location:/admin/');
 		}
 		else{
 			$data["login_status"] = "access_denied";
