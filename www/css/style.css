@@ -295,3 +295,9 @@ a {
 .big_size{
 	font-size: 18pt;
 }
+.in_row{
+	display: inline-block;
+}
+.in_coll{
+	display: block;
+}

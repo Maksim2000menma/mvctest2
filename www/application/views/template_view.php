@@ -10,14 +10,23 @@
 		<div id="wrapper">
 			<div id="header">
 				 <div>
-					<a href="/">Шапка</span></a>
-				</div> 
+					<a class="in_row" href="/">Шапка</span></a>
+
+
+					<?php if($_SESSION['login'] == ''){?>
+						<a class="in_coll" href="/registration">Регистрация</a>
+						<a class="in_coll" href="/login">Авторизация</a>
+					<?php } else { ?>
+							<p class="in_row" style="color:red; margin:0px;"><?php echo $_SESSION['login'];?></p>
+							<a href="/logout">Выход</a>
+					<?php }?>
+
+				</div>
 				<div id="menu">
 					<ul>
 						<li class="first active"><a href="/">Главная</a></li>
-						<li><a href="/services">Cтраница 1</a></li>
-						<li><a href="/portfolio">Страница 2</a></li>
-						<li class="last"><a href="/contacts">Страница 3</a></li>
+						<li><a href="/services">Ознакомление</a></li>
+						<li><a href="/portfolio">Список</a></li>
 					</ul>
 					<br class="clearfix" />
 				</div>
@@ -46,7 +55,7 @@
 
 				<br class="clearfix" />
 			</div>
-			
+
 		</div>
 
 

@@ -6,6 +6,8 @@ class Controller_Portfolio extends Controller
 
 	function __construct()
 	{
+		session_start();
+		
 		$this->model = new Model_Portfolio();
 		$this->view = new View();
 	}

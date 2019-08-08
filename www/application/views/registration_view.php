@@ -14,21 +14,3 @@
 
   <input name="submitadd" type="submit" required value="Отправить">
 </form>
-
-<?php
-// $connection = mysqli_connect("localhost", "root", "");
-// $select_db = mysqli_select_db($connection,'appusers');
-//
-// if (isset($_POST['submitadd'])){
-// 			$last_name = $_POST['last_name'];
-// 			$query = "INSERT INTO userinfo (last_name) VALUES ('$last_name')";
-// 			$result = mysqli_query($connection, $query);
-// 			if($result){
-// 				$smsg="Добавление прошло успешно";
-// 			echo $smsg;
-// 		}
-// 		else {
-// 			$fsmsg="Ошибка";
-// 		}
-// 		}
- ?>

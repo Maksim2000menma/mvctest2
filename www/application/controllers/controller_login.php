@@ -13,15 +13,17 @@ class Controller_Login extends Controller
 			$password =$_POST['password'];
 
 			/*
-			Производим аутентификацию, сравнивая полученные значения со значениями прописанными в коде.
-			Логин и пароль должны храниться в БД, причем пароль должен быть захеширован.
+			Производим аутентификацию - сравниваем получ значение и значение в коде
+			Логин и пароль будут храниться в БД
 			*/
 			if($login=="admin" && $password=="12345")
 			{
 				$data["login_status"] = "access_granted";
 
-				session_start(); echo $_SESSION['admin'];
+				session_start();
+				echo $_SESSION['admin'];
 				$_SESSION['admin'] = $password;
+				$_SESSION['login'] = $login;
 				header('Location:/admin/');
 			}
 			else
