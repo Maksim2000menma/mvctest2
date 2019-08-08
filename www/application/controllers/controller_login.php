@@ -28,14 +28,15 @@ class Controller_Login extends Controller
 			$row = mysqli_fetch_array($info, MYSQLI_ASSOC);//рабиваем полученный массив из sql запроса
 	//printf ("%s (%s)\n", $row["login"], $row["password"]);
 
-	printf($row["login"]);
+	//printf($row["login"]);
 
 			$data["login_status"] = "access_granted";
 
-			echo $_SESSION['admin'];
+			//echo $_SESSION['admin'];
+			//var_dump($row["login"]);
 			$_SESSION['admin'] = $password;
 			$_SESSION['login'] = $login;
-			header('Location:/admin/');//header('Location:/admin/');
+			header('Location:/user/');//header('Location:/admin/');
 		}
 		else{
 			$data["login_status"] = "access_denied";

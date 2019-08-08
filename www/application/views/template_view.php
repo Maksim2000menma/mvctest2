@@ -19,10 +19,9 @@
 						<div style="border:1px solid black; display:inline-block;">
 							<p class="in_row" style="color:red; margin:0px;"><?php echo $_SESSION['login'];?></p>
 							<p class="in_row" style="color:red; margin:0px;"><?php echo $_SESSION['admin'];?></p>
-							<p class="in_row" style="color:red; margin:0px;"><?php echo $_SESSION['last_name'];?></p>
 						</div>
 							<br>
-							<a href="/admin" style="color:green;">Панель администратора</a>
+							<a href="/user" style="color:green;">Панель администратора</a>
 							<a href="/logout">Выход</a>
 					<?php }?>
 
@@ -31,7 +30,7 @@
 					<ul>
 						<li class="first active"><a href="/">Главная</a></li>
 						<li><a href="/services">Ознакомление</a></li>
-						<li><a href="/user">Список</a></li>
+						<li><a href="/list">Список</a></li>
 					</ul>
 					<br class="clearfix" />
 				</div>
