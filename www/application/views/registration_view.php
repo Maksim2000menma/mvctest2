@@ -3,13 +3,13 @@
 
 <form  action="" method="post"><!--action="/application/views/registration_view.php"   or  /controller_registration.php-->
   <p><label>Фамилия&emsp;</label><br><input type="text" name="last_name" placeholder="Фамилия" required></p>
-  <!-- <p><label>Имя&emsp;</label><br><input type="text" name="" placeholder="Имя"></p>
-  <p><label>Дата рожднения  (мб сменю)&emsp;</label><br><input type="text" name="" placeholder="Дата рожднения  (мб сменю)"></p>
-  <p><label>Имя пользователя&emsp;</label><br><input type="text" name="" placeholder="Имя пользователя"></p>
-  <p><label>Пароль &emsp;</label><br><input type="text" name="" placeholder="Пароль"></p>
-  <p><label>Повторите пароль&emsp;</label><br><input type="text" name="" placeholder="Повторите пароль"></p>
-  <p><label>Описание о себе&emsp;</label><br><input type="text" name="" placeholder="Описание о себе"></p>
-  <p><label>Адресс проживания&emsp;</label><br><input type="text" name="" placeholder="Адресс проживания"></p> -->
+  <p><label>Имя&emsp;</label><br><input type="text" name="first_name" placeholder="Имя"></p>
+  <p><label>Дата рожднения  (мб сменю)&emsp;</label><br><input type="date" name="date" placeholder="Дата рожднения  (мб сменю)"></p>
+  <p><label>Имя пользователя&emsp;</label><br><input type="text" name="login" placeholder="Имя пользователя"></p>
+  <p><label>Пароль &emsp;</label><br><input type="password" name="password" id="pass" placeholder="Пароль"></p>
+  <!-- <p><label>Повторите пароль&emsp;</label><br><input type="text" name="" placeholder="Повторите пароль"></p> -->
+  <p><label>Описание о себе&emsp;</label><br><input type="text" name="description" placeholder="Описание о себе"></p>
+  <p><label>Адресс проживания&emsp;</label><br><input type="text" name="address" placeholder="Адресс проживания"></p>
   <br>
 
   <input name="submitadd" type="submit" required value="Отправить">
