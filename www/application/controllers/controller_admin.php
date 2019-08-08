@@ -11,16 +11,16 @@ class Controller_Admin extends Controller
 		проверяется равенство сессионной переменной admin прописанному
 		в коде значению — паролю далельше все будет хранится в бд
 		*/
-		if ( $_SESSION['admin'] == "12345" )
-		{
+		//if ( $_SESSION['admin'] == "12345" )
+		//{
 			$data = $this->model->GetInfo();
 			$this->view->generate('admin_view.php', 'template_view.php', $data);
-		}
-		else
-			{
-				session_destroy();
-				Route::ErrorPage404();
-			}
+		//}
+		//else
+		//	{
+				//session_destroy();
+				//Route::ErrorPage404();
+			//}
 	}
 
 }

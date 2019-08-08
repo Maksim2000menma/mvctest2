@@ -16,7 +16,12 @@
 						<a class="in_coll" href="/registration">Регистрация</a>
 						<a class="in_coll" href="/login">Авторизация</a>
 					<?php } else { ?>
+						<div style="border:1px solid black; display:inline-block;">
 							<p class="in_row" style="color:red; margin:0px;"><?php echo $_SESSION['login'];?></p>
+							<p class="in_row" style="color:red; margin:0px;"><?php echo $_SESSION['admin'];?></p>
+							<p class="in_row" style="color:red; margin:0px;"><?php echo $_SESSION['last_name'];?></p>
+						</div>
+							<br>
 							<a href="/admin" style="color:green;">Панель администратора</a>
 							<a href="/logout">Выход</a>
 					<?php }?>

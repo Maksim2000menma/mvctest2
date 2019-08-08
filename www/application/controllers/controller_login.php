@@ -28,7 +28,7 @@ class Controller_Login extends Controller
 			$row = mysqli_fetch_array($info, MYSQLI_ASSOC);//рабиваем полученный массив из sql запроса
 	//printf ("%s (%s)\n", $row["login"], $row["password"]);
 
-	//printf($row["login"], $row["password"]);
+	printf($row["login"]);
 
 			$data["login_status"] = "access_granted";
 
