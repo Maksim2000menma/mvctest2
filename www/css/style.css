@@ -311,3 +311,19 @@ a {
 	width: 40px;
 	height: 40px;
 }
+.size_button{
+	width:300px;
+}
+.small_mar_vert{
+	margin:10px 0px;
+}
+.norm_mar_vert{
+	margin:50px 0px;
+}
+.full_width{
+	width: 100%;
+}
+.form_window{
+	border:1px solid black;
+	box-shadow: 10px 100px 150px 100px rgba(0,0,0,0.15);
+}

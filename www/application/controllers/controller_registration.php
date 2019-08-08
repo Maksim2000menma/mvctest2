@@ -6,7 +6,7 @@ class Controller_Registration extends Controller
 	function __construct()
 	{
 		session_start();
-		
+
 		$this->model = new Model_Registration();
 		$this->view = new View();
 	}
@@ -30,7 +30,7 @@ class Controller_Registration extends Controller
 			$date = $_POST['date'];
 
 			$this->model->CreateUser($last_name, $first_name, $login, $password, $description, $address, $date);
-			header('Location:/portfolio/');
+			header('Location:/list/');
 			var_dump($last_name, $first_name, $login, $password, $description, $address, $date);//вывод информации о переменной
 		}
 
