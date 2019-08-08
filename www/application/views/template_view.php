@@ -12,12 +12,12 @@
 				 <div>
 					<a class="in_row" href="/">Шапка</span></a>
 
-
 					<?php if($_SESSION['login'] == ''){?>
 						<a class="in_coll" href="/registration">Регистрация</a>
 						<a class="in_coll" href="/login">Авторизация</a>
 					<?php } else { ?>
 							<p class="in_row" style="color:red; margin:0px;"><?php echo $_SESSION['login'];?></p>
+							<a href="/admin" style="color:green;">Панель администратора</a>
 							<a href="/logout">Выход</a>
 					<?php }?>
 
@@ -26,7 +26,7 @@
 					<ul>
 						<li class="first active"><a href="/">Главная</a></li>
 						<li><a href="/services">Ознакомление</a></li>
-						<li><a href="/portfolio">Список</a></li>
+						<li><a href="/user">Список</a></li>
 					</ul>
 					<br class="clearfix" />
 				</div>

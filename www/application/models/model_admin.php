@@ -1,12 +1,7 @@
 <?php
 
-class Model_Portfolio extends Model
+class Model_Admin extends Model
 {
-
-	//public function __construct(){
-		//load database
-	//}
-
 
 	public static function GetInfo(){
 		$connection = mysqli_connect("localhost", "root", "");
@@ -14,10 +9,8 @@ class Model_Portfolio extends Model
 		mysqli_query($connection, "SET CHARACTER SET 'utf8'");
 
 		$result=mysqli_query($connection, "SELECT * FROM userinfo;");
-		//$row=mysqli_fetch_array($result);
 
 		return $result;
-
 	}
 
 }

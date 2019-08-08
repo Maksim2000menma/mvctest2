@@ -1,11 +1,35 @@
 <h1>Панель администрирования</h1>
-<p>
-Админка...
-<!--
-Пока что, отобразим здесь простой текст.
-Далее можно добавить в админку некоторый функционал.
-Например, WYSIWYG-редактор для изменения страниц сайта (видов).
-Тогда, этот вид будет содержать выпадающий список для выбора страницы, поле редактора, а также кнопку
-для сохранения изменений. А некоторое действие контроллера администрирования будет описывать логику редактирования страниц.
--->
-</p>
+<table style="width:100%;">
+  <tr>
+      <th>id</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>date</th>
+      <th>login</th>
+      <th>password</th>
+      <th>role_id</th>
+      <th>function</th>
+     </tr>
+     <?php
+      	foreach($data as $row)
+      	{
+     		?>
+      <tr>
+        <td><?php echo $row['id']?></td>
+        <td><?php echo $row['first_name']?></td>
+        <td><?php echo $row['last_name']?></td>
+        <td><?php echo $row['date']?></td>
+        <td><?php echo $row['login']?></td>
+        <td><?php echo $row['password']?></td>
+        <td><?php echo $row['role_id']?></td>
+        <td>
+          <center>
+          <a href=""><img class="small_ico in_row" src="/images/more_info.jpg"></a>
+          <a href=""><img class="small_ico in_row" src="/images/edit_info.png"></a>
+          <a href=""><img class="small_ico in_row" src="/images/delete_info.png"></a>
+        </center>
+        </td>
+      </tr>
+    <?php }
+ ?>
+</table>

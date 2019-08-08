@@ -301,3 +301,7 @@ a {
 .in_coll{
 	display: block;
 }
+.small_ico{
+	width: 40px;
+	height: 40px;
+}
