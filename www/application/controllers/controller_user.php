@@ -3,13 +3,12 @@
 class Controller_User extends Controller
 {
 
-	function action_index()
-	{
+	function action_index(){
 		session_start();
 		$this->model = new Model_User();//неправильно надо сделать одну модель user а не на каждую роль по модели
 		/*
 		проверяется равенство сессионной переменной admin прописанному
-		в коде значению — паролю далельше все будет хранится в бд
+		в коде значению — паролю дальше все будет хранится в бд
 		*/
 		//if ( $_SESSION['admin'] == "12345" )
 		//{
@@ -21,6 +20,10 @@ class Controller_User extends Controller
 				//session_destroy();
 				//Route::ErrorPage404();
 			//}
+	}
+
+	function action_edit(){
+	$this->view->generate('edit_view.php', 'template_view.php');
 	}
 
 }

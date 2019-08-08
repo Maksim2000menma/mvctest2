@@ -14,10 +14,10 @@ class Route
 		$controller_name = 'Main';
 		$action_name = 'index';
 
-		$routes = explode('/', $_SERVER['REQUEST_URI']);
+		$routes = explode('/', $_SERVER['REQUEST_URI']);//разбиваем стороку с помощью разделителя /
 
 		// получаем имя контроллера
-		if ( !empty($routes[1]) )
+		if ( !empty($routes[1]) ) //если переменная не пустая
 		{
 			$controller_name = $routes[1];
 		}
@@ -52,10 +52,10 @@ class Route
 		else
 		{
 			/*
-			правильно было бы кинуть здесь исключение,
-			но для упрощения сразу сделаем редирект на страницу 404
+			надо сделать исключение,
+			но временно редирект на страницу 404
 			*/
-			Route::ErrorPage404();//------------
+		//	Route::ErrorPage404();//------------
 		}
 
 		// создаем контроллер
@@ -70,17 +70,17 @@ class Route
 		else
 		{
 			// здесь также разумнее было бы кинуть исключение
-			Route::ErrorPage404();//-----------
+		//	Route::ErrorPage404();//-----------
 		}
 
 	}
 
 	function ErrorPage404()
 	{
-    $host = 'http://'.$_SERVER['HTTP_HOST'].'/';//-----------
-    header('HTTP/1.1 404 Not Found');//-----------
-		header("Status: 404 Not Found");//-----------
-		header('Location:'.$host.'404');//-----------
+    //$host = 'http://'.$_SERVER['HTTP_HOST'].'/';//-----------
+    //header('HTTP/1.1 404 Not Found');//-----------
+		//header("Status: 404 Not Found");//-----------
+		//header('Location:'.$host.'404');//-----------
     }
 
 }

@@ -25,7 +25,7 @@
         <td>
           <center>
           <a href=""><img class="small_ico in_row" src="/images/more_info.jpg"></a>
-          <a href=""><img class="small_ico in_row" src="/images/edit_info.png"></a>
+          <a href="edit/"><img class="small_ico in_row" src="/images/edit_info.png"></a>
           <a href=""><img class="small_ico in_row" src="/images/delete_info.png"></a>
         </center>
         </td>

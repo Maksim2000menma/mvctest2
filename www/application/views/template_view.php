@@ -5,69 +5,68 @@
 		<meta name="keywords" content="" />
 		<title>Тест</title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+
+		<script src="/js/react.development.js"></script>
+    <script src="/js/react-dom.development.js"></script>
+    <script src="/js/babel.min.js"></script>
+    <script src="/js/script.jsx" type="text/babel"></script><!--text/babel - показываем что текст нужно интерпретировать-->
+
 	</head>
 	<body>
-		<div id="wrapper">
-			<div id="header">
-				 <div>
-					<a class="in_row" href="/">Шапка</span></a>
+		<div id="wrapper" class="container">
+			<div class="row" style="padding:40px;">
 
+				 <div class="col-md-4">
 					<?php if($_SESSION['login'] == ''){?>
 						<a class="in_coll" href="/registration">Регистрация</a>
 						<a class="in_coll" href="/login">Авторизация</a>
 					<?php } else { ?>
-						<div style="border:1px solid black; display:inline-block;">
-							<p class="in_row" style="color:red; margin:0px;"><?php echo $_SESSION['login'];?></p>
-							<p class="in_row" style="color:red; margin:0px;"><?php echo $_SESSION['admin'];?></p>
+						<div style="display:inline-block;">
+							<p class="in_coll" style="margin:0px;">Привет&nbsp;<?php echo $_SESSION['login'];?>&nbsp;,</p>
+							<p class="in_coll" style="margin:0px;">не забудь свой пароль - "<?php echo $_SESSION['admin'];?>"</p>
 						</div>
 							<br>
 							<a href="/user" style="color:green;">Панель администратора</a>
 							<a href="/logout">Выход</a>
 					<?php }?>
+				</div>
 
-				</div>
-				<div id="menu">
-					<ul>
-						<li class="first active"><a href="/">Главная</a></li>
-						<li><a href="/services">Ознакомление</a></li>
-						<li><a href="/list">Список</a></li>
-					</ul>
-					<br class="clearfix" />
-				</div>
-			</div>
-			<div id="page">
-				<!-- <div id="sidebar">
-					<div class="side-box">
-						<h3>Основное меню</h3>
-						<ul class="list">
-							<li class="first "><a href="/">Главная</a></li>
-							<li><a href="/services">Страница1</a></li>
-							<li><a href="/portfolio">Страница 2</a></li>
-							<li class="last"><a href="/contacts">Страница 3</a></li>
-						</ul>
+				<div  class="col-md-8" id="menu" style="text-align:right;">
+					 <!-- <div class="in_row_menu">
+						<a href="/" class="big_size">Главная</a>
 					</div>
-				</div> -->
 
-
-				<div id="content">
-					<div class="box">
-						<?php include 'application/views/'.$content_view; ?>
+					<div class="in_row_menu">
+						<a href="/services" class="big_size">Ознакомление</a>
 					</div>
-					<br class="clearfix" />
+
+					<div class="in_row_menu">
+						<a href="/list" class="big_size">Список</a>
+					</div> -->
 				</div>
 
-
+		</div>
+<br>
+<br>
+<br>
+			<div class="row">
+				<div style="padding: 20px 40px 0 40px;" class="col-md-12">
+					<div id="content">
+						<div class="box">
+							<?php include 'application/views/'.$content_view; ?>
+						</div>
+					<br class="clearfix" />
+					</div>
 				<br class="clearfix" />
 			</div>
-
 		</div>
 
 
-
-
-
 		<div id="footer">
-			<a href="/">Подвал</a>
+			<p>Скромный подвал)</p>
+		</div>
+
 		</div>
 	</body>
 </html>
