@@ -29,28 +29,30 @@ class Controller_User extends Controller
 	}
 
 	function action_edit(){
-	$url = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 's' : '') . '://';//получение url ccskrb
-	$url = $url . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-	preg_match("/[^\/]+$/", $url, $matches);//получение последнего символа в url
-	$last_word = $matches[0];
-	//printf($last_word);//вывод id
+		$url = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 's' : '') . '://';//получение url ccskrb
+		$url = $url . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+		preg_match("/[^\/]+$/", $url, $matches);//получение последнего символа в url
+		$last_word = $matches[0];
 
-	if(isset($_POST['submitapp'])){
-		$id = $_POST['id'];
-		$last_name = $_POST['last_name'];
-		$first_name = $_POST['first_name'];
-		$date = $_POST['date'];
-		$login = $_POST['login'];
-		$password = $_POST['password'];
+		if(isset($_POST['submitapp'])){
+			$id = $_POST['id'];
+			$last_name = $_POST['last_name'];
+			$first_name = $_POST['first_name'];
+			$date = $_POST['date'];
+			$login = $_POST['login'];
+			$password = $_POST['password'];
 
-		$this->model->UpdateInfo($id, $last_name, $first_name, $date, $login, $password);
-		header('Location:/user/');
-		$this->view->generate('edit_view.php', 'template_view.php');
-	}
-	else{
-		$data = $this->model->GetInfoId($last_word);
-		$this->view->generate('edit_view.php', 'template_view.php',$data);
-	}
+			$this->model->UpdateInfo($id, $last_name, $first_name , $date, $login, $password);
+			header('Location:/user/');
+			$this->view->generate('edit_view.php', 'template_view.php');
+			// printf($id);
+		  // printf($last_name);
+			// printf($first_name);
+		}
+		else{
+			$data = $this->model->GetInfoId($last_word);
+			$this->view->generate('edit_view.php', 'template_view.php',$data);
+		}
 	}
 
 	function action_delete(){
