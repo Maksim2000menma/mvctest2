@@ -33,3 +33,7 @@
     <?php }
  ?>
 </table>
+<br>
+
+<div id="user_table">
+</div>

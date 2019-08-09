@@ -11,6 +11,7 @@
     <script src="/js/react-dom.development.js"></script>
     <script src="/js/babel.min.js"></script>
     <script src="/js/script.jsx" type="text/babel"></script><!--text/babel - показываем что текст нужно интерпретировать-->
+		<script src="/js/table.jsx" type="text/babel"></script>
 
 	</head>
 	<body>
