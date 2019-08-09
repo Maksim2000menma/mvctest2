@@ -4,7 +4,7 @@
       <th>id</th>
       <th>first_name</th>
       <th>last_name</th>
-      <th>date</th>
+      <th>date_b</th>
       <th>login</th>
       <th>password</th>
       <th>role_id</th>
@@ -18,7 +18,7 @@
         <td><?php echo $row['id']?></td>
         <td><?php echo $row['first_name']?></td>
         <td><?php echo $row['last_name']?></td>
-        <td><?php echo $row['date']?></td>
+        <td><?php echo $row['date_b']?></td>
         <td><?php echo $row['login']?></td>
         <td><?php echo $row['password']?></td>
         <td><?php echo $row['role_id']?></td>

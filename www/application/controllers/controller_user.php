@@ -38,11 +38,12 @@ class Controller_User extends Controller
 			$id = $_POST['id'];
 			$last_name = $_POST['last_name'];
 			$first_name = $_POST['first_name'];
-			$date = $_POST['date'];
+			$date_b = $_POST['date_b'];
 			$login = $_POST['login'];
 			$password = $_POST['password'];
+			$role_id = $_POST['role_id'];
 
-			$this->model->UpdateInfo($id, $last_name, $first_name , $date, $login, $password);
+			$this->model->UpdateInfo($id, $last_name, $first_name , $date_b, $login, $password, $role_id);
 			header('Location:/user/');
 			$this->view->generate('edit_view.php', 'template_view.php');
 			// printf($id);

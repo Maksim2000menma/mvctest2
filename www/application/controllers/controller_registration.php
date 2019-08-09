@@ -20,11 +20,11 @@ class Controller_Registration extends Controller
 			$password = $_POST['password'];
 			$description = $_POST['description'];
 			$address = $_POST['address'];
-			$date = $_POST['date'];
+			$date_b = $_POST['date_b'];
 
-			$this->model->CreateUser($last_name, $first_name, $login, $password, $description, $address, $date);
+			$this->model->CreateUser($last_name, $first_name, $login, $password, $description, $address, $date_b);
 			header('Location:/list/');
-			var_dump($last_name, $first_name, $login, $password, $description, $address, $date);//вывод информации о переменной
+			var_dump($last_name, $first_name, $login, $password, $description, $address, $date_b);//вывод информации о переменной
 		}
 
 		$this->view->generate('registration_view.php', 'template_view.php');

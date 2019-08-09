@@ -24,7 +24,7 @@
 						<a class="in_coll" href="/login">Авторизация</a>
 					<?php } else { ?>
 						<div style="display:inline-block;">
-							<p class="in_coll" style="margin:0px;">Привет&nbsp;<?php echo $_SESSION['login'];?>&nbsp;,</p>
+							<p class="in_coll" style="margin:0px;">Привет&nbsp;<b><?php echo $_SESSION['login'];?></b>&nbsp;,</p>
 							<p class="in_coll" style="margin:0px;">не забудь свой пароль - "<?php echo $_SESSION['admin'];?>"</p>
 						</div>
 							<br>

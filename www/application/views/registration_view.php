@@ -41,7 +41,7 @@
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-4 col-form-label">Дата рождения</label>
     <div class="col-sm-8">
-      <input type="date" name="date" class="form-control" placeholder="Дата рождения">
+      <input type="date" name="date_b" class="form-control" placeholder="Дата рождения">
     </div>
   </div>
 

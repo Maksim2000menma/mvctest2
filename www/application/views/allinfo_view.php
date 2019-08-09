@@ -8,7 +8,7 @@
         <p class="normal_size">Номер пользователя:&nbsp;<?php echo $row['id']?></p>
         <p class="normal_size">Имя пользователя:&nbsp;<b><?php echo $row['first_name']?></b></p>
         <p class="normal_size">Фамилия пользователя:&nbsp;<b><?php echo $row['last_name']?></b></p>
-        <p class="normal_size">Дата рождения:&nbsp;<?php echo $row['date']?></p>
+        <p class="normal_size">Дата рождения:&nbsp;<?php echo $row['date_b']?></p>
         <p class="normal_size">Логин:&nbsp;<b><?php echo $row['login']?></b></p>
         <p class="normal_size">Пароль:&nbsp;<b><?php echo $row['password']?></b></p>
         <p class="normal_size">Описание о себе:&nbsp;<?php echo $row['description']?></p>

@@ -21,12 +21,12 @@ class Model_User extends Model
 		return $result;
 	}
 
-	public static function UpdateInfo($id, $first_name, $last_name,  $date, $login, $password){
+	public static function UpdateInfo($id, $first_name, $last_name,  $date_b, $login, $password, $role_id){
 		$connection = mysqli_connect("localhost", "root", "");
 		$select_db = mysqli_select_db($connection,'appusers');
 		mysqli_query($connection, "SET CHARACTER SET 'utf8'");
 
-		$result=mysqli_query($connection, "UPDATE userinfo SET first_name='$first_name', last_name='$last_name', date='2000-07-03', login='$login', password='$password' WHERE id='$id';");
+		$result=mysqli_query($connection, "UPDATE userinfo SET first_name='$first_name', last_name='$last_name', date_b='$date_b', login='$login', password='$password', role_id='$role_id' WHERE id='$id';");
 		return $result;
 
 		// $connection = mysqli_connect("localhost", "root", "");

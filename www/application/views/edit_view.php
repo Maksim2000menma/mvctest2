@@ -8,7 +8,7 @@
       <th>id</th>
       <th>first_name</th>
       <th>last_name</th>
-      <th>date</th>
+      <th>date_b</th>
       <th>login</th>
       <th>password</th>
       <th>role_id</th>
@@ -20,10 +20,19 @@
         <td><input class="full_all form-control" type="text" readonly name="id" value="<?php echo $row['id']?>"></td>
         <td><input class="full_all form-control" type="text" name="first_name" value="<?php echo $row['first_name']?>"></td>
         <td><input class="full_all form-control" type="text" name="last_name" value="<?php echo $row['last_name']?>"></td>
-        <td><input class="full_all form-control" type="date" name="date" value="<?php echo $row['date']?>"></td>
+        <td><input class="full_all form-control" type="date" name="date_b" value="<?php echo $row['date_b']?>"></td>
         <td><input class="full_all form-control" type="text" name="login" value="<?php echo $row['login']?>"></td>
         <td><input class="full_all form-control" type="text" name="password" value="<?php echo $row['password']?>"></td>
-        <td><?php echo $row['role_id']?></td>
+        <!-- <td><?php echo $row['role_id']?></td> -->
+        <td>
+          <select class="form-control" name="role_id" style="width:60px;">
+            <option selected disabled hidden value="<?php echo $row['role_id']?>"><?php echo $row['role_id']?></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </td>
         <td><input class="btn btn-outline-primary size_button" type="submit" name="submitapp" style="width:100px;"  value="ОК"></td>
       </tr>
     <?php }?>

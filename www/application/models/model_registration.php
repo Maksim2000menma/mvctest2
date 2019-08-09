@@ -2,7 +2,7 @@
 
 class Model_Registration extends Model
 {
-	public static function CreateUser($last_name, $first_name, $login, $password, $description, $address, $date){
+	public static function CreateUser($last_name, $first_name, $login, $password, $description, $address, $date_b){
 
     $connection = mysqli_connect("localhost", "root", "");
     $select_db = mysqli_select_db($connection,'appusers');
@@ -10,7 +10,7 @@ class Model_Registration extends Model
 
     			//$last_name = $_POST['last_name'];
 
-    			$query = "INSERT INTO userinfo (last_name, first_name, login, password, description, address, date) VALUES ('$last_name', '$first_name', '$login', '$password', '$description', '$address', '$date')";
+    			$query = "INSERT INTO userinfo (last_name, first_name, login, password, description, address, date_b) VALUES ('$last_name', '$first_name', '$login', '$password', '$description', '$address', '$date_b')";
     			$result = mysqli_query($connection, $query);
 
     			if($result){
