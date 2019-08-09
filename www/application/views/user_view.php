@@ -24,9 +24,9 @@
         <td><?php echo $row['role_id']?></td>
         <td>
           <center>
-          <a href=""><img class="small_ico in_row" src="/images/more_info.jpg"></a>
-          <a href="edit/"><img class="small_ico in_row" src="/images/edit_info.png"></a>
-          <a href=""><img class="small_ico in_row" src="/images/delete_info.png"></a>
+          <a href="/user/allinfo/<?=$row['id']?>"><img class="small_ico in_row" src="/images/more_info.jpg"></a>
+          <a href="/user/edit/<?=$row['id']?>"><img class="small_ico in_row" src="/images/edit_info.png"></a>
+          <a href="/user/delete/<?=$row['id']?>"><img class="small_ico in_row" src="/images/delete_info.png"></a>
         </center>
         </td>
       </tr>
@@ -34,6 +34,7 @@
  ?>
 </table>
 <br>
-
+<br>
+<br>
 <div id="user_table">
 </div>

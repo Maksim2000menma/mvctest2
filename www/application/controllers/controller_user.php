@@ -2,10 +2,16 @@
 
 class Controller_User extends Controller
 {
+	function __construct()
+	{
+		session_start();
+		$this->model = new Model_User();
+		$this->view = new View();
+	}
 
 	function action_index(){
-		session_start();
-		$this->model = new Model_User();//неправильно надо сделать одну модель user а не на каждую роль по модели
+		//session_start();
+		//$this->model = new Model_User();//неправильно надо сделать одну модель user а не на каждую роль по модели
 		/*
 		проверяется равенство сессионной переменной admin прописанному
 		в коде значению — паролю дальше все будет хранится в бд
@@ -23,7 +29,50 @@ class Controller_User extends Controller
 	}
 
 	function action_edit(){
-	$this->view->generate('edit_view.php', 'template_view.php');
+	$url = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 's' : '') . '://';//получение url ccskrb
+	$url = $url . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+	preg_match("/[^\/]+$/", $url, $matches);//получение последнего символа в url
+	$last_word = $matches[0];
+	//printf($last_word);//вывод id
+
+	if(isset($_POST['submitapp'])){
+		$id = $_POST['id'];
+		$last_name = $_POST['last_name'];
+		$first_name = $_POST['first_name'];
+		$date = $_POST['date'];
+		$login = $_POST['login'];
+		$password = $_POST['password'];
+
+		$this->model->UpdateInfo($id, $last_name, $first_name, $date, $login, $password);
+		header('Location:/user/');
+		$this->view->generate('edit_view.php', 'template_view.php');
+	}
+	else{
+		$data = $this->model->GetInfoId($last_word);
+		$this->view->generate('edit_view.php', 'template_view.php',$data);
+	}
 	}
 
+	function action_delete(){
+		//этот код повторяется надо будет исправить
+		$url = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 's' : '') . '://';//получение url ccskrb
+		$url = $url . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+		preg_match("/[^\/]+$/", $url, $matches);//получение последнего символа в url
+		$last_word = $matches[0];
+		//printf($last_word);//вывод id
+
+		$data = $this->model->DeleteInfo($last_word);
+		header('Location:/user/');
+	}
+
+	function action_allinfo(){
+		//этот код повторяется надо будет исправить
+		$url = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 's' : '') . '://';//получение url ccskrb
+		$url = $url . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+		preg_match("/[^\/]+$/", $url, $matches);//получение последнего символа в url
+		$last_word = $matches[0];
+
+		$data = $this->model->GetInfoId($last_word);
+		$this->view->generate('allinfo_view.php', 'template_view.php',$data);
+	}
 }

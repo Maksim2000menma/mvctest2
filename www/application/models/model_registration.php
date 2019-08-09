@@ -3,14 +3,6 @@
 class Model_Registration extends Model
 {
 	public static function CreateUser($last_name, $first_name, $login, $password, $description, $address, $date){
-		// $connection = mysqli_connect("localhost", "root", "");
-		// $select_db = mysqli_select_db($connection,'appusers');
-		// mysqli_query($connection, "SET CHARACTER SET 'utf8'");
-
-    // $sql = 'INSERT INTO `userinfo`(`last_name`) VALUES (:last_name_bind)';
-    // $result = $db->prepare($sql);
-    // $result->bindParam(':last_name_bind',$last_name, PDO::PARAM_STR);;
-    // return $result->execute();
 
     $connection = mysqli_connect("localhost", "root", "");
     $select_db = mysqli_select_db($connection,'appusers');
@@ -24,7 +16,6 @@ class Model_Registration extends Model
     			if($result){
     				$smsg="Добавление прошло успешно";
     			echo $smsg;
-          //header('/portfolio');
     		}
     		else {
     			$fsmsg="Ошибка";

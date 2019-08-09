@@ -34,7 +34,7 @@ class Table extends React.Component{
    render() {
       return (
          <div>
-            <h1 id='title'>React Table</h1>
+            <h1 id='title'>React Static Table</h1>
             <table id='students' className="full_width">
                <tbody>
                <tr>{this.renderTableHeader()}</tr>
