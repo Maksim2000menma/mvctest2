@@ -27,10 +27,9 @@
         <td>
           <select class="form-control" name="role_id" style="width:60px;">
             <option selected disabled hidden value="<?php echo $row['role_id']?>"><?php echo $row['role_id']?></option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="1">1 (ЗП)</option>
+            <option value="2">2 (Модератор)</option>
+            <option value="3">3 (Админ)</option>
           </select>
         </td>
         <td><input class="btn btn-outline-primary size_button" type="submit" name="submitapp" style="width:100px;"  value="ОК"></td>
