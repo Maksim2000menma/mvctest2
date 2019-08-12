@@ -16,6 +16,8 @@ class Controller_User extends Controller
 		проверяется равенство сессионной переменной admin прописанному
 		в коде значению — паролю дальше все будет хранится в бд
 		*/
+
+
 		//if ( $_SESSION['admin'] == "12345" )
 		//{
 			$data = $this->model->GetInfo();
@@ -78,4 +80,29 @@ class Controller_User extends Controller
 		$data = $this->model->GetInfoId($last_word);
 		$this->view->generate('allinfo_view.php', 'template_view.php',$data);
 	}
+
+	function action_create(){
+
+		if(isset($_POST['submitadd'])){
+			$last_name = $_POST['last_name'];
+			$first_name = $_POST['first_name'];
+			$login = $_POST['login'];
+			$password = $_POST['password'];
+			$description = $_POST['description'];
+			$address = $_POST['address'];
+			$date_b = $_POST['date_b'];
+
+			$this->model->CreateInfo($last_name, $first_name, $login, $password, $description, $address, $date_b);
+			header('Location:/user/');
+		}
+		$this->view->generate('create_view.php', 'template_view.php');
+
+	}
+
+
+
+
+
+
+
 }

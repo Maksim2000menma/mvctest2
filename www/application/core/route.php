@@ -55,7 +55,7 @@ class Route
 			надо сделать исключение,
 			но временно редирект на страницу 404
 			*/
-		//	Route::ErrorPage404();//------------
+			Route::ErrorPage404();//------------
 		}
 
 		// создаем контроллер
@@ -69,18 +69,18 @@ class Route
 		}
 		else
 		{
-			// здесь также разумнее было бы кинуть исключение
-		//	Route::ErrorPage404();//-----------
+			// здесь также надо кинуть исключение
+			Route::ErrorPage404();//-----------
 		}
 
 	}
 
 	function ErrorPage404()
 	{
-    //$host = 'http://'.$_SERVER['HTTP_HOST'].'/';//-----------
-    //header('HTTP/1.1 404 Not Found');//-----------
-		//header("Status: 404 Not Found");//-----------
-		//header('Location:'.$host.'404');//-----------
+    $host = 'http://'.$_SERVER['HTTP_HOST'].'/';//-----------
+    header('HTTP/1.1 404 Not Found');//-----------
+		header("Status: 404 Not Found");//-----------
+		header('Location:'.$host.'404');//-----------
     }
 
 }

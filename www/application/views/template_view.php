@@ -49,8 +49,6 @@
 
 		</div>
 <br>
-<br>
-<br>
 			<div class="row">
 				<div style="padding: 20px 40px 0 40px;" class="col-md-12">
 					<div id="content">

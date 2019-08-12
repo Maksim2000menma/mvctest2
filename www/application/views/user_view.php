@@ -34,6 +34,8 @@
  ?>
 </table>
 <br>
+<a href="/user/create"><input type="button" value="Добавить пользователя" class="btn btn-outline-primary size_button" /></a>
+<br>
 <br>
 <br>
 <div id="user_table">

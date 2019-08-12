@@ -1,22 +1,3 @@
-<!-- <h1>Регистрация</h1>
-<p>Необходимо заполнить все поля для регистрации</p> -->
-
-<!-- <div>
-
-<form  action="" method="post">
-  <p><label>Фамилия&emsp;</label><br><input type="text" name="last_name" placeholder="Фамилия" required></p>
-  <p><label>Имя&emsp;</label><br><input type="text" name="first_name" placeholder="Имя"></p>
-  <p><label>Дата рожднения  (мб сменю)&emsp;</label><br><input type="date" name="date" placeholder="Дата рожднения  (мб сменю)"></p>
-  <p><label>Имя пользователя&emsp;</label><br><input type="text" name="login" placeholder="Имя пользователя"></p>
-  <p><label>Пароль &emsp;</label><br><input type="password" name="password" id="pass" placeholder="Пароль"></p>
-  <p><label>Описание о себе&emsp;</label><br><input type="text" name="description" placeholder="Описание о себе"></p>
-  <p><label>Адресс проживания&emsp;</label><br><input class="form-control" type="text" name="address" placeholder="Адресс проживания"></p>
-  <br>
-  <input name="submitadd" type="submit" required value="Отправить">
-</form>
-
-</div> -->
-
  <form  action="" method="post">
 <div class="row justify-content-center">
    <div class="col-md-6 col-sm-10 col-xs-10 form_window">
