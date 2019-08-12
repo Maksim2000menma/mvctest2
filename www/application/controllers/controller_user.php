@@ -31,6 +31,7 @@ class Controller_User extends Controller
 	}
 
 	function action_edit(){
+		if ($_SESSION['fun_edit'] == 1){
 		$url = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 's' : '') . '://';//получение url ccskrb
 		$url = $url . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 		preg_match("/[^\/]+$/", $url, $matches);//получение последнего символа в url
@@ -53,10 +54,14 @@ class Controller_User extends Controller
 			$data = $this->model->GetInfoId($last_word);
 			$this->view->generate('edit_view.php', 'template_view.php',$data);
 		}
-
+	}
+	else {
+			Route::ErrorPage404();
+	}
 	}
 
 	function action_delete(){
+		if ($_SESSION['fun_delete'] == 1){
 		//этот код повторяется надо будет исправить
 		$url = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 's' : '') . '://';//получение url ccskrb
 		$url = $url . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
@@ -67,8 +72,13 @@ class Controller_User extends Controller
 		$data = $this->model->DeleteInfo($last_word);
 		header('Location:/user/');
 	}
+	else {
+			Route::ErrorPage404();
+	}
+}
 
 	function action_allinfo(){
+		if ($_SESSION['fun_read'] == 1){
 		//этот код повторяется надо будет исправить
 		$url = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 's' : '') . '://';//получение url ccskrb
 		$url = $url . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
@@ -78,9 +88,13 @@ class Controller_User extends Controller
 		$data = $this->model->GetInfoId($last_word);
 		$this->view->generate('allinfo_view.php', 'template_view.php',$data);
 	}
+	else {
+			Route::ErrorPage404();
+	}
+}
 
 	function action_create(){
-
+if ($_SESSION['fun_create'] == 1){
 		if(isset($_POST['submitadd'])){
 			$last_name = $_POST['last_name'];
 			$first_name = $_POST['first_name'];
@@ -94,8 +108,11 @@ class Controller_User extends Controller
 			header('Location:/user/');
 		}
 		$this->view->generate('create_view.php', 'template_view.php');
-
 	}
+	else {
+			Route::ErrorPage404();
+	}
+}
 
 
 

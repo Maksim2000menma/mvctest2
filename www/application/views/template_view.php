@@ -41,7 +41,7 @@
 							 ?></b></p>
 						</div>
 							<br>
-							<a href="/user" style="color:green;">Панель администратора</a>
+							<a href="/user" style="color:green;">Панель управления</a>
 							<a href="/logout">Выход</a>
 					<?php }?>
 				</div>

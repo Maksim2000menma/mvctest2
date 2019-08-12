@@ -55,6 +55,18 @@
    </div>
  </div>
 
+ <div class="form-group row">
+   <label for="inputPassword" class="col-sm-4 col-form-label">Роль</label>
+   <div class="col-sm-8">
+     <select class="form-control" name="role_id">
+       <option selected disabled hidden value="<?php echo $row['role_id']?>"><?php echo $row['role_id']?></option>
+       <option value="1">1 (ЗП)</option>
+       <option value="2">2 (Модератор)</option>
+       <option value="3">3 (Админ)</option>
+     </select>
+   </div>
+ </div>
+
  <input name="submitadd" class="btn btn-outline-primary full_width" type="submit" required value="Создать">
 <br>
 <br>

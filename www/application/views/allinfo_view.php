@@ -9,24 +9,23 @@
         <p class="normal_size">Имя пользователя:&nbsp;<b><?php echo $row['first_name']?></b></p>
         <p class="normal_size">Фамилия пользователя:&nbsp;<b><?php echo $row['last_name']?></b></p>
         <p class="normal_size">Дата рождения:&nbsp;<?php echo $row['date_b']?></p>
+        <?php if ($_SESSION['role'] == 3){?>
         <p class="normal_size">Логин:&nbsp;<b><?php echo $row['login']?></b></p>
         <p class="normal_size">Пароль:&nbsp;<b><?php echo $row['password']?></b></p>
+      <?php }?>
         <p class="normal_size">Описание о себе:&nbsp;<?php echo $row['description']?></p>
         <p class="normal_size">Адресс проживания:&nbsp;<?php echo $row['address']?></p>
         <p class="normal_size">Статус пользователя:&nbsp;<b>
           <?php
           switch ($row['role_id']) {
               case 1:
-              echo "Гость";
+              echo "ЗП";
               break;
               case 2:
-              echo "Зарегистрированный пользователь";
-              break;
-              case 3:
               echo "Модератор";
               break;
-              case 4:
-              echo "Администратор";
+              case 3:
+              echo "Админ";
               break;
             }
           ?>
