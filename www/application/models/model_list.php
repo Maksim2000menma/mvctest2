@@ -1,12 +1,6 @@
 <?php
-
 class Model_List extends Model
 {
-
-	//public function __construct(){
-		//load database
-	//}
-
 
 	public static function GetInfo(){
 		$connection = mysqli_connect("localhost", "root", "");
@@ -18,10 +12,5 @@ class Model_List extends Model
 
 		return $result;
 	}
-
-
-	 //public static function(){
-	 //code
-	 //}
 
 }

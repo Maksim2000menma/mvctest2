@@ -27,7 +27,7 @@
         <td><?php echo $row['login']?></td>
         <td><?php echo $row['password']?></td>
         <?php }?>
-        
+
         <td><?php echo $row['role_id'],' - ';
         switch ($row['role_id']) {
           case 1:
@@ -70,3 +70,6 @@
 <br>
 <div id="user_table">
 </div>
+
+
+<script src="/js/table.jsx" type="text/babel"></script>

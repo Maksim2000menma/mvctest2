@@ -11,7 +11,10 @@
     <script src="/js/react-dom.development.js"></script>
     <script src="/js/babel.min.js"></script>
     <script src="/js/script.jsx" type="text/babel"></script><!--text/babel - показываем что текст нужно интерпретировать-->
-		<script src="/js/table.jsx" type="text/babel"></script>
+
+
+		<!-- <script src="/node_modules/antd/dist/antd.js" type="text/babel"></script>
+		<link rel="stylesheet" type="text/css" href="/node_modules/antd/dist/antd.css" /> -->
 
 	</head>
 	<body>
