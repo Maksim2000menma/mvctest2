@@ -18,7 +18,7 @@
 		<div id="wrapper" class="container">
 			<div class="row" style="padding:40px;">
 
-				 <div class="col-md-4">
+				 <div class="col-md-5">
 					<?php if($_SESSION['login'] == ''){?>
 						<a class="in_coll" href="/registration">Регистрация</a>
 						<a class="in_coll" href="/login">Авторизация</a>
@@ -26,6 +26,19 @@
 						<div style="display:inline-block;">
 							<p class="in_coll" style="margin:0px;">Привет&nbsp;<b><?php echo $_SESSION['login'];?></b>&nbsp;,</p>
 							<p class="in_coll" style="margin:0px;">не забудь свой пароль - "<?php echo $_SESSION['admin'];?>"</p>
+							<p class="in_coll" style="margin:0px;">твоя роль - <b><?php
+							switch ($_SESSION['role']) {
+								case 1:
+									echo 'Зарегистрированный пользователь';
+									break;
+								case 2:
+										echo 'Модератор';
+										break;
+								case 3:
+										echo 'Админ';
+										break;
+							}
+							 ?></b></p>
 						</div>
 							<br>
 							<a href="/user" style="color:green;">Панель администратора</a>
@@ -33,7 +46,7 @@
 					<?php }?>
 				</div>
 
-				<div  class="col-md-8" id="menu" style="text-align:right;">
+				<div  class="col-md-7" id="menu" style="text-align:right;">
 					 <!-- <div class="in_row_menu">
 						<a href="/" class="big_size">Главная</a>
 					</div>

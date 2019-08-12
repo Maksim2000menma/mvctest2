@@ -18,16 +18,16 @@ class Controller_User extends Controller
 		*/
 
 
-		//if ( $_SESSION['admin'] == "12345" )
-		//{
+		if ( $_SESSION['role'] )
+		{
 			$data = $this->model->GetInfo();
 			$this->view->generate('user_view.php', 'template_view.php', $data);
-		//}
-		//else
-		//	{
-				//session_destroy();
-				//Route::ErrorPage404();
-			//}
+		}
+		else
+			{
+				session_destroy();
+				Route::ErrorPage404();
+			}
 	}
 
 	function action_edit(){
@@ -48,14 +48,12 @@ class Controller_User extends Controller
 			$this->model->UpdateInfo($id, $last_name, $first_name , $date_b, $login, $password, $role_id);
 			header('Location:/user/');
 			$this->view->generate('edit_view.php', 'template_view.php');
-			// printf($id);
-		  // printf($last_name);
-			// printf($first_name);
 		}
 		else{
 			$data = $this->model->GetInfoId($last_word);
 			$this->view->generate('edit_view.php', 'template_view.php',$data);
 		}
+
 	}
 
 	function action_delete(){

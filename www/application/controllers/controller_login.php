@@ -23,19 +23,14 @@ class Controller_Login extends Controller
 			$row = mysqli_fetch_array($info, MYSQLI_ASSOC);
 			if(($login == $row["login"]) && ($password == $row["password"])){
 			//if($info){
-			//var_dump($info);
+			$role = $row["role_id"];
 
-			$row = mysqli_fetch_array($info, MYSQLI_ASSOC);//рабиваем полученный массив из sql запроса
-	//printf ("%s (%s)\n", $row["login"], $row["password"]);
-
-	//printf($row["login"]);
-
+			//$row = mysqli_fetch_array($info, MYSQLI_ASSOC);//рабиваем полученный массив из sql запроса
 			$data["login_status"] = "access_granted";
 
-			//echo $_SESSION['admin'];
-			//var_dump($row["login"]);
 			$_SESSION['admin'] = $password;
 			$_SESSION['login'] = $login;
+			$_SESSION['role'] = $role;
 			header('Location:/user/');//header('Location:/admin/');
 		}
 		else{
