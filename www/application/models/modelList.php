@@ -1,5 +1,5 @@
 <?php
-class Model_List extends Model
+class ModelList extends Model
 {
 
 	public static function GetInfo(){

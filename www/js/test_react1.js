@@ -1,5 +1,6 @@
 // import { DatePicker } from 'antd';
   // import 'node_modules/antd/dist/antd.css';
+  // import 'antd/dist/antd.css';
 
 class Test1 extends React.Component{
   render() {
@@ -10,6 +11,7 @@ class Test1 extends React.Component{
      )
   }
 }
+
 ReactDOM.render(
   <div>
     <Test1 />

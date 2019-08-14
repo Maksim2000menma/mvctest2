@@ -1,13 +1,13 @@
 <?php
 
-class Controller_Login extends Controller
+class ControllerLogin extends Controller
 {
 
-	function action_index()
+	function actionIndex()
 	{
 		//$data["login_status"] = "";
 		session_start();
-		$this->model = new Model_Login();
+		$this->model = new ModelLogin();
 
 		if(isset($_POST['login']) && isset($_POST['password']))
 		{
@@ -25,7 +25,7 @@ class Controller_Login extends Controller
 					$fun_edit = $row["edit_u"];
 					$data["login_status"] = "access_granted";
 
-					$_SESSION['admin'] = $password;
+					$_SESSION['admin'] = $password;//сохранение пароля логина роли и т.д
 					$_SESSION['login'] = $login;
 					$_SESSION['role'] = $role;
 
@@ -44,7 +44,7 @@ class Controller_Login extends Controller
 		{
 			$data["login_status"] = "";
 		}
-		$this->view->generate('login_view.php', 'template_view.php', $data);
+		$this->view->generate('loginView.php', 'templateView.php', $data);
 
 	}
 }

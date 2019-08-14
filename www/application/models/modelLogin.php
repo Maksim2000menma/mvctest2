@@ -1,6 +1,6 @@
 <?php
 
-class Model_Login extends Model
+class ModelLogin extends Model
 {
 
   public static function GetLogin($login, $password){
@@ -9,7 +9,7 @@ class Model_Login extends Model
     mysqli_query($connection, "SET CHARACTER SET 'utf8'");
 
     //$result=mysqli_query($connection, "SELECT * FROM userinfo WHERE (login = '$login') AND (password = '$password')");
-
+//выборка необходимых данных и связывание таблиц
     $result=mysqli_query($connection,
       "SELECT  userinfo.first_name, userinfo.date_b, userinfo.login, userinfo.password, userinfo.description, userinfo.address, userinfo.role_id,
       fun_permission.delete_u, fun_permission.create_u, fun_permission.read_u, fun_permission.edit_u  FROM userinfo

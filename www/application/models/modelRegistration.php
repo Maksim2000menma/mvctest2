@@ -1,6 +1,6 @@
 <?php
 
-class Model_Registration extends Model
+class ModelRegistration extends Model
 {
 	public static function CreateUser($last_name, $first_name, $login, $password, $description, $address, $date_b){
 

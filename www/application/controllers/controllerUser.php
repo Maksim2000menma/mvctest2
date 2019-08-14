@@ -1,27 +1,19 @@
 <?php
 
-class Controller_User extends Controller
+class ControllerUser extends Controller
 {
 	function __construct()
 	{
 		session_start();
-		$this->model = new Model_User();
+		$this->model = new ModelUser();
 		$this->view = new View();
 	}
 
-	function action_index(){
-		//session_start();
-		//$this->model = new Model_User();//неправильно надо сделать одну модель user а не на каждую роль по модели
-		/*
-		проверяется равенство сессионной переменной admin прописанному
-		в коде значению — паролю дальше все будет хранится в бд
-		*/
-
-
+	function actionIndex(){
 		if ( $_SESSION['role'] )
 		{
 			$data = $this->model->GetInfo();
-			$this->view->generate('user_view.php', 'template_view.php', $data);
+			$this->view->generate('userView.php', 'templateView.php', $data);
 		}
 		else
 			{
@@ -30,7 +22,7 @@ class Controller_User extends Controller
 			}
 	}
 
-	function action_edit(){
+	function actionEdit(){
 		if ($_SESSION['fun_edit'] == 1){
 		$url = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 's' : '') . '://';//получение url ccskrb
 		$url = $url . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
@@ -48,11 +40,11 @@ class Controller_User extends Controller
 
 			$this->model->UpdateInfo($id, $last_name, $first_name , $date_b, $login, $password, $role_id);
 			header('Location:/user/');
-			$this->view->generate('edit_view.php', 'template_view.php');
+			$this->view->generate('editView.php', 'templateView.php');
 		}
 		else{
 			$data = $this->model->GetInfoId($last_word);
-			$this->view->generate('edit_view.php', 'template_view.php',$data);
+			$this->view->generate('editView.php', 'templateView.php',$data);
 		}
 	}
 	else {
@@ -60,7 +52,7 @@ class Controller_User extends Controller
 	}
 	}
 
-	function action_delete(){
+	function actionDelete(){
 		if ($_SESSION['fun_delete'] == 1){
 		//этот код повторяется надо будет исправить
 		$url = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 's' : '') . '://';//получение url ccskrb
@@ -77,7 +69,7 @@ class Controller_User extends Controller
 	}
 }
 
-	function action_allinfo(){
+	function actionAllinfo(){
 		if ($_SESSION['fun_read'] == 1){
 		//этот код повторяется надо будет исправить
 		$url = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 's' : '') . '://';//получение url ccskrb
@@ -86,14 +78,14 @@ class Controller_User extends Controller
 		$last_word = $matches[0];
 
 		$data = $this->model->GetInfoId($last_word);
-		$this->view->generate('allinfo_view.php', 'template_view.php',$data);
+		$this->view->generate('allinfoView.php', 'templateView.php',$data);
 	}
 	else {
 			Route::ErrorPage404();
 	}
 }
 
-	function action_create(){
+	function actionCreate(){
 if ($_SESSION['fun_create'] == 1){
 		if(isset($_POST['submitadd'])){
 			$last_name = $_POST['last_name'];
@@ -107,7 +99,7 @@ if ($_SESSION['fun_create'] == 1){
 			$this->model->CreateInfo($last_name, $first_name, $login, $password, $description, $address, $date_b);
 			header('Location:/user/');
 		}
-		$this->view->generate('create_view.php', 'template_view.php');
+		$this->view->generate('createView.php', 'templateView.php');
 	}
 	else {
 			Route::ErrorPage404();

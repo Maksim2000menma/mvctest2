@@ -1,6 +1,6 @@
 <?php
 
-class Model_User extends Model
+class ModelUser extends Model
 {
 
 	public static function GetInfo(){
@@ -23,7 +23,7 @@ class Model_User extends Model
 	}
 
 
-	public static function UpdateInfo($id, $first_name, $last_name,  $date_b, $login, $password, $role_id){
+	public static function UpdateInfo($id, $last_name, $first_name, $date_b, $login, $password, $role_id){
 		$connection = mysqli_connect("localhost", "root", "");
 		$select_db = mysqli_select_db($connection,'appusers');
 		mysqli_query($connection, "SET CHARACTER SET 'utf8'");
@@ -60,5 +60,5 @@ class Model_User extends Model
     		}
 	}
 
-	
+
 }

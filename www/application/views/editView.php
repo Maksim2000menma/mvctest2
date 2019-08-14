@@ -26,11 +26,9 @@
         <?php if ($_SESSION['role'] == 3){?>
         <td><input class="full_all form-control" type="text" name="login" value="<?php echo $row['login']?>"></td>
         <td><input class="full_all form-control" type="text" name="password" value="<?php echo $row['password']?>"></td>
-
-        <!-- <td><?php echo $row['role_id']?></td> -->
         <td>
           <select class="form-control" name="role_id" style="width:60px;">
-            <option selected disabled hidden value="<?php echo $row['role_id']?>"><?php echo $row['role_id']?></option>
+            <option selected hidden value="<?php echo $row['role_id']?>"><?php echo $row['role_id']?></option>
             <option value="1">1 (ЗП)</option>
             <option value="2">2 (Модератор)</option>
             <option value="3">3 (Админ)</option>

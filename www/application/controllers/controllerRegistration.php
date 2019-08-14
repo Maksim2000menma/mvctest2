@@ -1,16 +1,16 @@
 <?php
 
-class Controller_Registration extends Controller
+class ControllerRegistration extends Controller
 {
 
 	function __construct()
 	{
 		session_start();
-		$this->model = new Model_Registration();
+		$this->model = new ModelRegistration();
 		$this->view = new View();
 	}
 
-	function action_index()
+	function actionIndex()
 	{
 		//если нажата кнопка submit то отправить все в модель
 		if(isset($_POST['submitadd'])){
@@ -27,6 +27,6 @@ class Controller_Registration extends Controller
 			var_dump($last_name, $first_name, $login, $password, $description, $address, $date_b);//вывод информации о переменной
 		}
 
-		$this->view->generate('registration_view.php', 'template_view.php');
+		$this->view->generate('registrationView.php', 'templateView.php');
 	}
 }

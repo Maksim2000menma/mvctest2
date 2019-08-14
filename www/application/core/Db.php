@@ -1,6 +1,6 @@
 <?php
 
-  class dbconnect{
+class dbconnect{
 
   public function connect(){
     $connection = mysqli_connect("localhost", "root", "");
